@@ -1,1 +1,4 @@
-export class CreateCompanyDto {}
+export class CreateCompanyDto {
+    title : string
+    desciption : string
+}
