@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Company } from './company/entities/company.entity';
 import { Service } from './service/entities/service.entity';
 import { ProductModule } from './product/product.module';
+import { FooterItemModule } from './footer-item/footer-item.module';
 
 
 @Module({
@@ -20,7 +21,7 @@ import { ProductModule } from './product/product.module';
     entities:[Company, Service],
     autoLoadEntities: true,
     synchronize: true
-  }),CompanyModule, ServiceModule, ProductModule],
+  }),CompanyModule, ServiceModule, ProductModule, FooterItemModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,3 +1,4 @@
+import { FooterItem } from "src/footer-item/entities/footer-item.entity";
 import { Product } from "src/product/entities/product.entity";
 import { Service } from "src/service/entities/service.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
@@ -16,5 +17,8 @@ export class Company {
 
     @OneToMany(()=>Service, (service) => service.company)
     services : Service[]
+
+    @OneToMany(()=>FooterItem, (footerItem)=> footerItem.company)
+    footerItems : FooterItem[]
 
 }

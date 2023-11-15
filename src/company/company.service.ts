@@ -11,7 +11,6 @@ export class CompanyService {
     @InjectRepository(Company)
     private companyRepository : Repository<Company>
 
-
   ){}
   create(createCompanyDto: CreateCompanyDto) {
     return 'This action adds a new company';
