@@ -8,6 +8,8 @@ import { Company } from './company/entities/company.entity';
 import { Service } from './service/entities/service.entity';
 import { ProductModule } from './product/product.module';
 import { FooterItemModule } from './footer-item/footer-item.module';
+import { FooterItem } from './footer-item/entities/footer-item.entity';
+import { Product } from './product/entities/product.entity';
 
 
 @Module({
@@ -18,7 +20,7 @@ import { FooterItemModule } from './footer-item/footer-item.module';
     username: 'root',
     password: '',
     database: 'nestproject',
-    entities:[Company, Service],
+    entities:[Company, Service, FooterItem, Product],
     autoLoadEntities: true,
     synchronize: true
   }),CompanyModule, ServiceModule, ProductModule, FooterItemModule],

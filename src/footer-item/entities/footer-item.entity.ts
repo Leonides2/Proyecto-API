@@ -1,7 +1,7 @@
 import { Company } from "src/company/entities/company.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("footerItem")
+@Entity('FooterItem')
 export class FooterItem {
     @PrimaryGeneratedColumn()
     id : number
