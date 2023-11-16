@@ -22,7 +22,7 @@ import { Product } from './product/entities/product.entity';
     database: 'nestproject',
     entities:[Company, Service, FooterItem, Product],
     autoLoadEntities: true,
-    synchronize: true
+    synchronize: false
   }),CompanyModule, ServiceModule, ProductModule, FooterItemModule],
   controllers: [AppController],
   providers: [AppService],

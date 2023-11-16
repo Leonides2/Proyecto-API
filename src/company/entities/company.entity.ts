@@ -11,7 +11,7 @@ export class Company {
     @Column()
     title : string
     @Column()
-    desciption : string
+    description : string
     @OneToMany(()=>Product , (product) => product.company)
     products : Product[]
 
