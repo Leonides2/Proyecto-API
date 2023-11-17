@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { QueryBuilder, Repository } from 'typeorm';
 import { Company } from './entities/company.entity';
 
 @Injectable()
@@ -24,10 +24,8 @@ export class CompanyService {
     },} );
   }
 
-  findOne(idA: number) {
-    return this.companyRepository.findOne({where:{ id : idA,}, relations: { products : true,
-      services : true,
-      footerItems : true},});
+  findOne(id: number) {
+    return this.companyRepository.findOneBy({id});
   } 
 
   async update(id: number, updateCompanyDto: UpdateCompanyDto) {
