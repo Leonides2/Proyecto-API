@@ -12,6 +12,8 @@ export class Company {
     title : string
     @Column()
     description : string
+    @Column()
+    url : string
     @OneToMany(()=>Product , (product) => product.company)
     products : Product[]
 

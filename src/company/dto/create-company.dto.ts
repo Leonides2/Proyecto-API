@@ -1,4 +1,6 @@
 export class CreateCompanyDto {
     title : string
-    desciption : string
+    description : string
+    url : string
+
 }
