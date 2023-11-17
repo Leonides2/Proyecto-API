@@ -21,6 +21,7 @@ export class CompanyController {
   findOne(@Param('id') id: string) {
     return this.companyService.findOne(+id);
   }
+  
 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateCompanyDto: UpdateCompanyDto) {

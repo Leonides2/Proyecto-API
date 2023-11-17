@@ -17,12 +17,18 @@ export class CompanyService {
   }
 
   findAll() {
-    return this.companyRepository.find();
+    return this.companyRepository.find({ relations: {
+      products : true,
+      services : true,
+      footerItems : true
+    },} );
   }
 
-  findOne(id: number) {
-    return this.companyRepository.findOneBy({id});
-  }
+  findOne(idA: number) {
+    return this.companyRepository.findOne({where:{ id : idA,}, relations: { products : true,
+      services : true,
+      footerItems : true},});
+  } 
 
   async update(id: number, updateCompanyDto: UpdateCompanyDto) {
     var updateCompany =  await this.companyRepository.update({id}, updateCompanyDto);
