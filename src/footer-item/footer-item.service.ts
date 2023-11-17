@@ -25,8 +25,9 @@ export class FooterItemService {
     return this.footerItemRepository.findOneBy({id});
   }
 
-  update(id: number, updateFooterItemDto: UpdateFooterItemDto) {
-    return `This action updates a #${id} footerItem`;
+  async update(id: number, updateFooterItemDto: UpdateFooterItemDto) {
+    var updateFooterItem = this.footerItemRepository.update({id},updateFooterItemDto)
+    return updateFooterItem;
   }
 
   remove(id: number) {

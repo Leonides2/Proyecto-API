@@ -24,8 +24,9 @@ export class ProductService {
     return this.productRepository.findOneBy({id});
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+  async update(id: number, updateProductDto: UpdateProductDto) {
+    var updateProduct = this.productRepository.update({id},updateProductDto)
+    return updateProduct;
   }
 
   remove(id: number) {

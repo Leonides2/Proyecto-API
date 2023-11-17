@@ -24,8 +24,9 @@ export class CompanyService {
     return this.companyRepository.findOneBy({id});
   }
 
-  update(id: number, updateCompanyDto: UpdateCompanyDto) {
-    return `This action updates a #${id} company`;
+  async update(id: number, updateCompanyDto: UpdateCompanyDto) {
+    var updateCompany =  await this.companyRepository.update({id}, updateCompanyDto);
+    return updateCompany;
   }
 
   remove(id: number) {

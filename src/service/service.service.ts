@@ -25,8 +25,9 @@ export class ServiceService {
     return this.serviceRepository.findOneBy({id});
   }
 
-  update(id: number, updateServiceDto: UpdateServiceDto) {
-    return `This action updates a #${id} service`;
+  async update(id: number, updateServiceDto: UpdateServiceDto) {
+    var updateService = this.serviceRepository.update({id}, updateServiceDto)
+    return updateService;
   }
 
   remove(id: number) {
